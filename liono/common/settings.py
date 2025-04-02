@@ -7,6 +7,7 @@ def init():
     global htmlfname,homedir,templatespath,fname,junoKey,juno,que,results,guidconvert
     global acedbhost,acedatabase,jkey,jsondump,ques,escalations,etd,monthly,cog
     global rule,vrt,snortversion,unedited,projDir,pcapDir,rulesDir
+    global search01,sigmgr,sigkey
 
 # get home dir location based on OS/platform
 def gethome():
@@ -96,3 +97,8 @@ pkg     = f"https://{bpuser}:{key}@{repo}"
 # dictionary to store bp usr input id revision and name
 bp      = {"usrstrng":"","id":0,"rev":0,"name":"","active":"","type":""}
 bpres   = []
+
+# clam av
+search01     = "https://search01.vrt.sourcefire.com/"
+sigmgr       = "https://sigmanager.talos.cisco.com/"
+sigkey       = getKey("sigmgr")

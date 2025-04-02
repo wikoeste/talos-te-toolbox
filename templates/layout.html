@@ -42,8 +42,10 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
+            <a href={{url_for("clamsearch")}}>ClamAV Search</a>
             <a href="/elasticq">Elastic Queries</a>
             <a href="/jirasearch">Jira Search</a>
+            <a href={{url_for("tg")}}>Malware Analytics</a>
           </div>
         </div>
         <!--SCRIPTS DROPDOWN MENU-->
@@ -54,7 +56,6 @@
           <div class="dropdown-content">
             <a href={{url_for("reinjection")}}>Reinjection</a>
             <a href={{url_for("etd")}}>ETD</a>
-            <a href={{url_for("tg")}}>Malware Analytics</a>
             <a href={{url_for("backlogbuddy")}}>Backlog Buddy</a>
             <a href={{url_for("langs")}}>IPAS Lang Acronyms</a>
           </div>
@@ -163,7 +164,6 @@
           <img alt="cua" src="../static/imgs/cua.png" height="200" width="280"></a>
           <div class="caption">CUA Tool</div>
       </div>
-
       <!--Snort3 PigReplay UI TILE-->
       <div class="tiles tile thover">
           <a href={{url_for("pigreplay")}}>
@@ -193,13 +193,13 @@
                 <li><a href="https://wwwin.cisco.com/c/cec/cisco/calendar-events.html">Calendar & Events</a></li>
                 <li><a href="https://sign-on.security.cisco.com/">Cloud Security</a></li>
                 <li><a href="https://confluence.vrt.sourcefire.com/">Confluence</a></li>
-                <li><a href="https://scripts.cisco.com/app/quicker_csone/">CSONE SR Lookup</a></li>
                 <li><a href="https://prod-juno-kibana.sv4.ironport.com/login?next=%2F">Kibana</a> </li>
                 <li><a href="http://wwwin-tools.cisco.com/itsm/mailer/welcome.do">Mailer Lists</a></li>
                 <li><a href="http://wwwin-tools.cisco.com/dir/reports/marshal1">Org-Marshall</a></li>
                 <li><a href="https://docs.snort.org/welcome">S3 Docs</a></li>
                 <li><a href="https://search01.vrt.sourcefire.com/">Search Sigs</a></li>
                 <li><a href="https://sigmanager.talos.cisco.com/">Sig Mgr</a></li>
+                <li><a href="https://scripts.cisco.com/app/quicker_csone/">SR Lookup</a></li>
                 <li><a href="https://blog.talosintelligence.com/">Talos Blog</a></li>
                 <li><a href="https://talosservices.statuspage.io/?subscription_confirmed=true">Talos Services</a></li>
             <br>

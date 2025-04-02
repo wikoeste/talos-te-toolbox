@@ -1,0 +1,104 @@
+<html>
+    <header>
+      <title>ClamAV</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+      <!-- menu bar -->
+      <div class="navbar">
+          <h1>ClamAV Results</h1>
+          <!--<img src="../static/imgs/toolbox.png" style="position:absolute;right:20px;top:20px;"/>-->
+        <a href={{url_for("layout")}}>Home</a>
+        <!--TICKETS DROPDOWN MENU-->
+        <div class="dropdown">
+          <button class="dropbtn">Tickets
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href={{url_for("runscript")}}>GET JIRA TIX</a>
+            <a href={{url_for("assignedtickets")}}>ASSIGNED</a>
+            <a href={{url_for("unassignedtickets")}}>UNASSIGNED</a>
+            <a href={{url_for("getacetix")}}>ANALYST CONSOLE TIX</a>
+            <a href={{url_for("talosjiraeers")}}>Jira-EERS</a>
+            <a href={{url_for("talosjiraops")}}>Jira-TalosOps</a>
+            <a href={{url_for("talosjirathr")}}>Jira-THR</a>
+            <a href={{url_for("talosjiraresbz")}}>Jira-RESBZ</a>
+          </div>
+        </div>
+        <!--UMBRELLA DROPDOWN MENU-->
+        <div class="dropdown">
+         <button class="dropbtn">Umbrella-Tools
+          <i class="fa fa-caret-down"></i>
+         </button>
+          <div class="dropdown-content">
+            <a href="https://editor.securityresearch.umbrella.com/editor" target="_blank">Research Editor</a>
+            <a href={{url_for("intelproxysearchform")}}>Proxy Script Search</a>
+          </div>
+        </div>
+        <!--SEARCH TOOLS DROPDOWN MENU-->
+        <div class="dropdown">
+          <button class="dropbtn">Search Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href={{url_for("clamsearch")}}>ClamAV Search</a>
+            <a href="/elasticq">Elastic Queries</a>
+            <a href="/jirasearch">Jira Search</a>
+            <a href={{url_for("tg")}}>Malware Analytics</a>
+          </div>
+        </div>
+        <!--SCRIPTS DROPDOWN MENU-->
+        <div class="dropdown">
+          <button class="dropbtn">Scripts
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href={{url_for("reinjection")}}>Reinjection</a>
+            <a href={{url_for("etd")}}>ETD</a>
+            <a href={{url_for("backlogbuddy")}}>Backlog Buddy</a>
+            <a href={{url_for("langs")}}>IPAS Lang Acronyms</a>
+          </div>
+        </div>
+        <!--STAGING SERVERS DROPDOWN MENU-->
+        <div class="dropdown">
+         <button class="dropbtn">Staging Servers
+          <i class="fa fa-caret-down"></i>
+         </button>
+          <div class="dropdown-content">
+            <a href="https://analyst-console-staging.vrt.sourcefire.com/escalations" target="_blank">ACE</a>
+            <a href="https://fmd-tepot-01tst.vrt.sourcefire.com" target="_blank">TEA</a>
+            <a href="https://talosintelligence-staging.herokuapp.com/reputation_center/" target="_blank">Talos Intel</a>
+          </div>
+        </div>
+        <!--LOGOUT BUTTON-->
+        <a href={{url_for("logout")}}>Logout</a>
+      </div>
+    </header>
+    <!--end menu bar-->
+   <body>
+   <br><br>
+         {% autoescape false %}
+            {{res}}
+        {%endautoescape%}
+   <br><br>
+   <div class="elasticform">
+    <form action="/dropclam" method="POST">
+        <br>
+        Enter the Clam Sig to Drop: <input type="text" name="sig"/>
+        <p>Drop Reason:
+        <select name="reason">
+            <option value="1">Reviewer rejected</option>
+            <option value="2">Failed FP check</option>
+            <option value="3">FP in field</option>
+            <option value="4">Replaced</option>
+            <option value="5">Other</option>
+        </select></p>
+        Enter Notes on Drop:
+        <input type="text" name="notes"/>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</div>
+
+   </body>
+        <div class="footer">
+            <p>Copyright (c) 2022 wikoeste, Cisco Internal Use Only</p>
+        </div>
+</html>

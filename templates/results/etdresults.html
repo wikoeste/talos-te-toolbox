@@ -39,8 +39,10 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
+            <a href={{url_for("clamsearch")}}>ClamAV Search</a>
             <a href="/elasticq">Elastic Queries</a>
             <a href="/jirasearch">Jira Search</a>
+            <a href={{url_for("tg")}}>Malware Analytics</a>
           </div>
         </div>
         <!--SCRIPTS DROPDOWN MENU-->
@@ -51,7 +53,6 @@
           <div class="dropdown-content">
             <a href={{url_for("reinjection")}}>Reinjection</a>
             <a href={{url_for("etd")}}>ETD</a>
-            <a href={{url_for("tg")}}>Malware Analytics</a>
             <a href={{url_for("backlogbuddy")}}>Backlog Buddy</a>
             <a href={{url_for("langs")}}>IPAS Lang Acronyms</a>
           </div>

@@ -113,16 +113,16 @@ def trackerDecodeRules(header,user,key,engine):
 
 # called from server.py --> app.getrj
 def reinjection(sample,user,key):
-    rjURL = 'https://sherlock.ironport.com/webapi/reinjection/search'
-    params = {'mids': sample}
-    #print(params)
-    resp = requests.get(rjURL, params=params, auth=(user,key), verify=False)
-    status = resp.status_code
-    cids = ',' ''.join(map(str, sample))
+    rjURL   = 'https://sherlock.ironport.com/webapi/reinjection/search'
+    params  = {'mids': sample}
+    resp    = requests.get(rjURL, params=params, auth=(user,key), verify=False)
+    status  = resp.status_code
+    cids    = ',' ''.join(map(str, sample))
     cids.replace('"',"")
     cidlist = cids.split(",")
     #print(cidlist)
     if status == 200:
+        print("Sherlock RJ Web API Success: {}".format(sample))
         jresp = resp.json()    
         #print(json.dumps(jresp, indent=2))
         ruleVers, subjwrap, sendingIP, egregious, vr_verd, t1, t2 = ('', '', '', '', '', '', '')
@@ -247,6 +247,7 @@ def reinjection(sample,user,key):
             ruleVers, subjwrap, sendingIP, egregious, vr_verd, t1, t2 = ('', '', '', '', '', '', '')
             senders, recipients, langs, keywords, flags, threads = ([], [], [], [], [], [])
             count+=1
-        print("Sherlock RJ Web API Success: {}".format(sample))
     else:
-        print("Sherlock API HTTP ERROR {}".format(status))
+        err = ("Sherlock API HTTP ERROR {}".format(status))
+        print(err)
+        settings.guidconvert['rj'].append(err)

@@ -11,7 +11,7 @@ from liono import main as loader
 from liono.common import settings
 settings.init()
 from liono.common import assignTickets,getTickets,q,csvtohtml,sherlock,bpsearch
-from liono.common import aceqrys,jsearch,inteldb,ruledownload,snortreplay,tgSearch
+from liono.common import aceqrys,jsearch,inteldb,ruledownload,snortreplay,tgSearch,clam
 from liono.common import rulesearch as rs
 
 # Flask app config
@@ -80,25 +80,28 @@ def acetickets():
         return render_template('acetickets.html')
     return redirect(url_for('notloggedin'))
 
+# jira search options
 @app.route('/jirasearch')
 def jirasearch():
     if 'username' in session:
         return render_template('./forms/jirasearch.html')
     return redirect(url_for('notloggedin'))
 
+# sherlock reinjection api form
 @app.route('/reinjection')
 def reinjection():
     if 'username' in session:
         return render_template('./forms/reinjectionform.html')
     return redirect(url_for('notloggedin'))
 
+# Get umbrella intelproxy submission form
 @app.route('/proxysearchform')
 def intelproxysearchform():
     if 'username' in session:
         return render_template('./forms/intelproxyscript.html')
     return redirect(url_for('notloggedin'))
 
-##Get ETD cid submission form
+# Get ETD cid submission form
 @app.route('/etd')
 def etd():
     if 'username' not in session:
@@ -111,6 +114,13 @@ def etd():
 def tg():
     if 'username' in session:
         return render_template('./forms/tgSearch.html')
+    return redirect(url_for('notloggedin'))
+
+# load clamav sig search form via sha256
+@app.route('/clamsearch')
+def clamsearch():
+    if 'username' in session:
+        return render_template('./forms/clamSearch.html')
     return redirect(url_for('notloggedin'))
 
 # END WEB TEMPLATES
@@ -450,7 +460,53 @@ def gettg():
 
 ###############
 # SEARCH TOOLS
-@app.route('/getjira', methods = ['POST','GET'])    # jira qrys
+
+# drop clam av sig
+@app.route('/dropclam', methods=['POST'])
+def dropclam():
+    results = None
+    if 'username' not in session:
+        return render_template(url_for('notloggedin'))
+    else:
+        if request.method == 'POST':
+            print(request.values)
+            sig     = request.values.get('sig')
+            reas    = request.values.get('reason')
+            notes   = request.values.get('notes')
+            results = clam.dropsig(sig,reas,notes)
+            if results == None:
+                err = "No Results"
+                return render_template('/err/err.html', err=err)
+            else:
+                return render_template('/results/clamresults.html',res=results)
+        else:                                                       # Return Error
+            err = "Not a post request!"
+            return render_template("./err/err.html", err=err)
+
+#search for clamav sigs by sha256
+@app.route('/getclam', methods = ['POST','GET'])
+def getclam():
+    s256    = None
+    results = None
+    if 'username' not in session:
+        return render_template(url_for('notloggedin'))
+    else:
+        if request.method   == 'POST':
+            print(request.values)
+            s256    = request.form.get('sha256')
+            vrt     = request.form.get('vrt')
+            results = clam.searchvrt(s256,vrt)
+            if results == None:
+                err = "No Results"
+                return render_template('/err/err.html', err=err)
+            else:
+                return render_template('/results/clamresults.html',res=results)
+        else:                                                       # Return Error
+            err = "Not a post request!"
+            return render_template("./err/err.html", err=err)
+
+# jira search qrys
+@app.route('/getjira', methods = ['POST','GET'])
 def getjira():
     results = None
     if 'username' not in session:
