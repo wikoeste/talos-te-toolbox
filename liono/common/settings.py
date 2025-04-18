@@ -48,7 +48,7 @@ jsondump            = ""
 #AnalystConsole Creds
 acedbhost           = 'ava-tdbro-01prd.vrt.sourcefire.com'
 acedatabase         = 'analyst_console'
-templatespath       = "/Users/wikoeste/PycharmProjects/te1-webapp/templates/"
+templatespath       = "/Users/wikoeste/PycharmProjects/talos-te-toolbox/templates/"
 lastninety          = datetime.datetime.now() - datetime.timedelta(90)
 lastseven           = datetime.datetime.now() - datetime.timedelta(7)
 # ticket web urls
@@ -85,9 +85,9 @@ snortversion = None
 rule         = None
 unedited     = None
 vrt          = None
-projDir      = "/Users/" + uname + "/PycharmProjects/te1-webapp/liono/"
-pcapDir      = "/Users/" + uname + "/PycharmProjects/te1-webapp/liono/pigreplay/pcaps/"
-rulesDir     = "/Users/" + uname + "/PycharmProjects/te1-webapp/liono/pigreplay/snort-rules/"
+projDir      = "/Users/" + uname + "/PycharmProjects/talos-te-toolbox/liono/"
+pcapDir      = "/Users/" + uname + "/PycharmProjects/talos-te-toolbox/liono/pigreplay/pcaps/"
+rulesDir     = "/Users/" + uname + "/PycharmProjects/talos-te-toolbox/liono/pigreplay/snort-rules/"
 
 # bp cloud download api
 bpuser  = "wikoeste"

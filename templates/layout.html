@@ -102,74 +102,84 @@
 
     <!--WEB CLICKABLE TILES-->
     <div class="container">
-      <!--JUPITER UI TILE-->
+       <!--JUPITER UI TILE-->
        <div class="tiles tile thover">
          <a href="https://jupiterui.ironport.com" target="_blank">
              <img alt="jptr" src="../static/imgs/jupiter.jpeg" height="200"></a>
           <div class="caption ">Jupiter</div>
       </div>
-      <!--SHERLOCK UI TILE-->
+
+       <!--SHERLOCK UI TILE-->
        <div class="tiles tile thover">
           <a href="https://sherlock.ironport.com" target="_blank">
              <img alt="sherlock" src="../static/imgs/sherlock.png" height="200"></a>
           <div class="caption ">Sherlock</div>
-      </div>
-      <!--WBRS SCORE TOOL-->
+       </div>
+
+       <!--WBRS SCORE TOOL-->
        <div class="tiles tile thover">
           <a href="https://fmd-repapi-01tst.vrt.sourcefire.com/calc/" target="_blank">
               <img alt="scoretool" src="../static/imgs/scrtool.png" height="200" width="280"></a>
               <div class="caption">Score Tool</div>
-      </div>
-      <!--TE ANALYSIS UI TILE-->
+       </div>
+
+       <!--TE ANALYSIS UI TILE-->
        <div class="tiles tile thover">
             <a href="https://ava-tepot-01prd.vrt.sourcefire.com/" target="_blank">
             <img alt="tea" src="../static/imgs/tea.png" height="200"></a>
             <div class="caption ">TEA GUI</div>
-      </div>
-      <!--Analyst Console UI TILE-->
-      <div class="tiles tile thover">
+       </div>
+
+       <!--Analyst Console UI TILE-->
+       <div class="tiles tile thover">
             <a href="https://analyst-console.vrt.sourcefire.com/" target="_blank">
             <img alt="ace" src="../static/imgs/acespd.png" height="200"></a>
             <div class="caption ">ACE GUI</div>
-      </div>
+       </div>
 
-      <!--AMPTOOLS UI TILE-->
+       <!--AMPTOOLS UI TILE-->
        <div class="tiles tile thover">
             <a href="https://amptools.cisco.com/" target="_blank">
               <img alt="ampwrench" src="../static/imgs/tools.png" height="200"></a>
           <div class="caption">AMP Tools</div>
       </div>
-      <!--SNORT SID/CVE Checker TILE-->
+
+       <!--SNORT SID/CVE Checker TILE-->
        <div class="tiles tile thover">
             <a href="https://scripts.cisco.com/app/SnortRule_checker/" target="_blank">
               <img alt="snort" src="../static/imgs/snortbw.jpg" height="200" width="250"></a>
            <br>
           <div class="caption">Snort|CVE Checker</div>
       </div>
-      <!--Talos Intelligence Reputation UI TILE-->
+
+       <!--Talos Intelligence Reputation UI TILE-->
        <div class="tiles tile thover">
           <a href="https://talosintelligence.com/reputation" target="_blank">
               <img alt="talos" src="../static/imgs/talosbw.png" height="200" width="280"></a>
           <div class="caption">Talos Reputation</div>
       </div>
-      <!--VIRUS TOTAL SSO TILE-->
+
+        <!--VIRUS TOTAL SSO TILE-->
        <div class="tiles tile thover">
           <a href="http://go2.cisco.com/virustotal" target="_blank">
           <img alt="vtenterprise" src="../static/imgs/vtenterprise.png" height="200" width="280"></a>
           <div class="caption">Virus Total Enterprise</div>
       </div>
-      <!--CUA WEB UI TILE-->
+
+        <!--CUA WEB UI TILE-->
        <div class="tiles tile thover">
           <a href="https://armory-sl.sco.cisco.com/web/cua/conviction/query" target="_blank">
           <img alt="cua" src="../static/imgs/cua.png" height="200" width="280"></a>
           <div class="caption">CUA Tool</div>
       </div>
+
       <!--Snort3 PigReplay UI TILE-->
       <div class="tiles tile thover">
           <a href={{url_for("pigreplay")}}>
           <img alt="s3r" src="../static/imgs/s3.png" height="200" width="280"></a>
           <div class="caption">Pig Replay</div>
       </div>
+
       <!--Secure Endpoint BP Search TILE-->
       <div class="tiles tile thover">
           <a href={{url_for("bpSearch")}}>
@@ -177,34 +187,56 @@
           <div class="caption">BP Search</div>
       </div>
 
-       <!--TE useful links side bar-->
+      <!--Malware Analytics login TILE-->
+      <div class="tiles tile thover">
+          <a href="https://panacea.threatgrid.com/login" target="_blank">
+          <img alt="s3r" src="../static/imgs/malan.jpeg" height="200" width="280"></a>
+          <div class="caption">Malware Analytcis</div>
+      </div>
+
+      <!--Umbrella login TILE-->
+      <div class="tiles tile thover">
+          <a href="https://login.umbrella.com/" target="_blank">
+          <img alt="s3r" src="../static/imgs/umbr.png" height="200" width="280"></a>
+          <div class="caption">Umbrella</div>
+      </div>
+
+      <!--Reversing Labs login TILE-->
+      <div class="tiles tile thover">
+          <a href="https://rl.vrt.sourcefire.com/accounts/login/" target="_blank">
+          <img alt="s3r" src="../static/imgs/rlabs.jpeg" height="200" width="280"></a>
+          <div class="caption">Rev Labs Spectra</div>
+      </div>
+
+      <!--TE useful links side bar-->
         <style>
             ul.demo {
             display:inline-block;
             list-style-type: none;
+            align:center;
             border: 3px dotted orange;
             }
         </style>
-          <ul class="demo">
+        <ul class="demo">
             <p align="center">UseFuel Links</p>
-                <li><a href="https://wwwin.cisco.com/cgi-bin/it/sales/acctteamdir/index.cgi">Acct Team Locator</a></li>
-                <li><a href="https://bst.cloudapps.cisco.com/bugsearch/">Bug Search Tool</a> </li>
-                <li><a href="https://wwwin.cisco.com/c/cec/bridge.html/home">Cisco Home</a></li>
-                <li><a href="https://wwwin.cisco.com/c/cec/cisco/calendar-events.html">Calendar & Events</a></li>
-                <li><a href="https://sign-on.security.cisco.com/">Cloud Security</a></li>
-                <li><a href="https://confluence.vrt.sourcefire.com/">Confluence</a></li>
-                <li><a href="https://prod-juno-kibana.sv4.ironport.com/login?next=%2F">Kibana</a> </li>
-                <li><a href="http://wwwin-tools.cisco.com/itsm/mailer/welcome.do">Mailer Lists</a></li>
-                <li><a href="http://wwwin-tools.cisco.com/dir/reports/marshal1">Org-Marshall</a></li>
-                <li><a href="https://docs.snort.org/welcome">S3 Docs</a></li>
-                <li><a href="https://search01.vrt.sourcefire.com/">Search Sigs</a></li>
-                <li><a href="https://sigmanager.talos.cisco.com/">Sig Mgr</a></li>
-                <li><a href="https://scripts.cisco.com/app/quicker_csone/">SR Lookup</a></li>
-                <li><a href="https://blog.talosintelligence.com/">Talos Blog</a></li>
-                <li><a href="https://talosservices.statuspage.io/?subscription_confirmed=true">Talos Services</a></li>
-            <br>
-            <li><a href="https://regex101.com/">Regex Tester</a></li>
-          </ul>
+                <li><a href="https://wwwin.cisco.com/cgi-bin/it/sales/acctteamdir/index.cgi" target="_blank">Acct Team Locator</a></li>
+                <li><a href="https://bst.cloudapps.cisco.com/bugsearch/" target="_blank">Bug Search Tool</a> </li>
+                <li><a href="https://wwwin.cisco.com/c/cec/bridge.html/home" target="_blank">Cisco Home</a></li>
+                <li><a href="https://wwwin.cisco.com/c/cec/cisco/calendar-events.html" target="_blank">Calendar & Events</a></li>
+                <li><a href="https://sign-on.security.cisco.com/" target="_blank">Cloud Security</a></li>
+                <li><a href="https://confluence.vrt.sourcefire.com/" target="_blank">Confluence</a></li>
+                <li><a href="https://prod-juno-kibana.sv4.ironport.com/login?next=%2F" target="_blank">Kibana</a> </li>
+                <li><a href="http://wwwin-tools.cisco.com/itsm/mailer/welcome.do" target="_blank">Mailer Lists</a></li>
+                <li><a href="http://wwwin-tools.cisco.com/dir/reports/marshal1" target="_blank">Org-Marshall</a></li>
+                <li><a href="https://docs.snort.org/welcome" target="_blank">S3 Docs</a></li>
+                <li><a href="https://search01.vrt.sourcefire.com/" target="_blank">Search Sigs</a></li>
+                <li><a href="https://sigmanager.talos.cisco.com/" target="_blank">Sig Mgr</a></li>
+                <li><a href="https://scripts.cisco.com/app/quicker_csone/" target="_blank">SR Lookup</a></li>
+                <li><a href="https://blog.talosintelligence.com/" target="_blank">Talos Blog</a></li>
+                <li><a href="https://talosservices.statuspage.io/?subscription_confirmed=true" target="_blank">Talos Services</a></li>
+            <p align="center">External Tools</p>
+                <li><a href="https://regex101.com/" target="_blank">Regex Tester</a></li>
+        </ul>
     </div>
     <br><br>
     </body>
