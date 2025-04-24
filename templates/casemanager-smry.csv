@@ -1,3 +1,6 @@
 Link,Description,Created,Assign
+<a href =https://jira.talos.cisco.com/browse/COG-79043 target=_blank>COG-79043</a>,PROXIMUS - IPAS- FP ,2025-04-24,<form action=/takescript method=POST><input type=checkbox name=checks value=COG-79043><label for=COG-79043>COG-79043</label>
+<a href =https://jira.talos.cisco.com/browse/COG-79042 target=_blank>COG-79042</a>,[fp]Log file getting flagged as malicious,2025-04-24,<form action=/takescript method=POST><input type=checkbox name=checks value=COG-79042><label for=COG-79042>COG-79042</label>
+<a href =https://jira.talos.cisco.com/browse/COG-79041 target=_blank>COG-79041</a>,699013792: DSV AS - File Validation Request,2025-04-24,<form action=/takescript method=POST><input type=checkbox name=checks value=COG-79041><label for=COG-79041>COG-79041</label>
 ,,,<button type=submit>Take Selected Tickets</button></form>
-Total Opened,0
+Total Opened,3

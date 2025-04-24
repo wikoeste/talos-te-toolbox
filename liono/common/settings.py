@@ -30,8 +30,8 @@ def getKey(keyname):
         for l in lines:
             if keyname.upper() in l:
                 match = l
-    key = re.sub(r'.*=','',match) # remove key name and = sign
-    key = re.sub(r'"','',key) # remove quotes from keys
+    key = re.sub(r'.*=|.*API=','',match) # remove key name and = sign
+    key = re.sub(r'"','',key)            # remove quotes from keys
     #print(key)
     return key
 

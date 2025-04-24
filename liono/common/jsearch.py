@@ -59,9 +59,10 @@ def search(queue,qry):
 
 def last7():
     tix,created,status,results = ([],)*4
-    jql       = None
-    headers   = {'Content-type': 'application/json'}
-    rqurl     = "https://jira.talos.cisco.com/rest/api/2/search"
+    op,cl,reo       = 0,0,0
+    jql             = None
+    headers         = {'Content-type': 'application/json'}
+    rqurl           = "https://jira.talos.cisco.com/rest/api/2/search"
     #assigned in the last 7
     jql = "?jql=project=COG and created >= -7d and assignee in (" + settings.uname + ")+"# AND status in (Open, Reopened, 'Pending Reporter', 'COG Investigating', 'Pending 3rd Party') order by updated DESC"
     resp = requests.get(rqurl+jql, headers=headers,auth=(settings.uname,settings.jkey), verify=False)
@@ -74,9 +75,18 @@ def last7():
                 datefrmt = re.sub("T.+", "", i['fields']['created'])
                 created.append(datefrmt)
                 status.append(i['fields']['status']['name'])
-        return tix
+                if (i['fields']['status']['name'] == "Open"):
+                    op+=1
+                elif (i['fields']['status']['name'] == 'Resolved'):
+                    cl+=1
+                elif (i['fields']['status']['name'] == 'Reopened'):
+                    reo+=1
+                else:
+                    pass
+
+        return tix,op,cl,reo
     else:
-        return None
+        return None,0,0,0
 
 def ques():
     proj    = ["COG","EERS","THR","BZ"]

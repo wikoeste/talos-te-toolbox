@@ -23,7 +23,7 @@
             <a href={{url_for("talosjiraops")}}>Jira-TalosOps</a>
             <a href={{url_for("talosjirathr")}}>Jira-THR</a>
             <a href={{url_for("talosjiraresbz")}}>Jira-RESBZ</a>
-            <a href="https://scripts.cisco.com/app/quicker_csone/" target="_blank">CSONE Search</a>
+            <a href="/last7">Metrics Last 7 Days</a>
           </div>
         </div>
         <!--UMBRELLA DROPDOWN MENU-->
@@ -43,6 +43,7 @@
           </button>
           <div class="dropdown-content">
             <a href={{url_for("clamsearch")}}>ClamAV Search</a>
+            <a href="https://scripts.cisco.com/app/quicker_csone/" target="_blank">CSONE Search</a>
             <a href="/elasticq">Elastic Queries</a>
             <a href="/jirasearch">Jira Search</a>
             <a href={{url_for("tg")}}>Malware Analytics</a>
@@ -242,6 +243,6 @@
     </body>
     <!--Footer section-->
     <div class="footer">
-            <p>Copyright (c) 2022 wikoeste, Cisco Internal Use Only</p>
+            <p>Copyright 2022 Cisco/Talos Internal Use Only.<br>Version 0.0.1</p>
         </div>
 </html>

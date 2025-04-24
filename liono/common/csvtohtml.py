@@ -129,7 +129,7 @@ def htmloutput(fname): # wrtite html file from the csv file
                '<a href="/unassigned"> | Unassigned</a><a href="/getacetix"> | ACE Tix</a><a href="/last7"> | Last 7 Days</a></p>\n' \
                '<p><a href="/ajx"> | Scripting</a></p>'
     if 'backlog' in fname:
-        filein = open('/Users/wikoeste/PycharmProjects/te1-webapp/static/backlogbuddy.csv', "r")
+        filein = open('/Users/wikoeste/PycharmProjects/talos-te-toolbox/static/backlogbuddy.csv', "r")
     else:
         filein = open(settings.csvfname, "r")
     fileout = open(fname, "w")

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/te1-webapp.iml" filepath="$PROJECT_DIR$/.idea/te1-webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/te-talos-casemgr.iml" filepath="$PROJECT_DIR$/.idea/te-talos-casemgr.iml" />
     </modules>
   </component>
 </project>

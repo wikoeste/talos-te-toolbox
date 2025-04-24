@@ -94,4 +94,3 @@ def searchvrt(sample,vrt):
         err = [["VRT Search01 API Error"],
             ["HTTP ERROR".format(response.status_code)]]
         print(err)
-

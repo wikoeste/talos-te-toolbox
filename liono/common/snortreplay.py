@@ -43,6 +43,11 @@ def s3(rules,pcap):
         snortrun = subprocess.run(['snort', '-q', '-c', lua, '-r', settings.pcapDir + pcap,
                     '--rule-path', settings.rulesDir, '-A', 'alert_talos'], check=True, capture_output=True)
 
+    # test with sec over con & debug logs no -q
+    if "debug" in rules:
+        snortrun = subprocess.run(['snort', '-c', lua, '-r', settings.pcapDir + pcap,
+                    '--rule-path', settings.rulesDir,'--tweaks', 'security', '-A','alert_talos'], check=True, capture_output=True)
+
     # write snort output to snort.log
     with open(settings.projDir+"pigreplay/snort.log", "w") as f:
         f.write(str(snortrun))

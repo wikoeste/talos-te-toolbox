@@ -30,7 +30,6 @@
 <br><br>
 
 <!--Tickets-->
-
 <!--Users tickets-->
 <div style="float: left; width: 50%">
     <table border="1px solid black;">
@@ -59,6 +58,7 @@
                 <tr>
                     <td>Total</td>
                     <td>{{total}}</td>
+                    <td>Open:{{op}}|Reopened:{{reo}}|Resolved:{{cl}}</td>
                 </tr>
             </tbody>
         </table>
@@ -69,8 +69,8 @@
     <div class="divScroll">
         <table border="1px solid black;">
             <thead>
-            <th>COMPANY</th>
-            <th>SUBMITTED TICKETS</th>
+                <th>COMPANY</th>
+                <th>SUBMITTED TICKETS</th>
             </thead>
             <tbody>
             {% for ele,count in monthly.items()%}
@@ -83,15 +83,17 @@
         </table>
     </div>
 </div>
-<br><br>
+
+<br>
 
 <!--Cases by engineer-->
-<div>
-    <table border="1px solid black;">
+<div align="left">
+    <p>This table needs to be on the left</p>
+    <table align="left" border="1px solid black;">
         <thead>
-                        <th>Engineer</th>
-                        <th>Open Cases</th>
-                    </thead>
+             <th>Engineer</th>
+             <th>Open Cases</th>
+        </thead>
         {% for ele,count in team.items()%}
         <tbody>
         <tr>
@@ -182,7 +184,6 @@
                 </tbody>
         </table>
 </div>
-<br><br>
 
 <!--ETD-->
 <div>
@@ -212,6 +213,7 @@
         </tbody>
          </table>
 </div>
+
 <br><br>
 
 </body>

@@ -751,6 +751,8 @@ def testpcap():
                     results = snortreplay.s3("con", pcap)
                 elif policy == "all":
                     results = snortreplay.s3("all", pcap)
+                elif policy == "dbg":
+                    results = snortreplay.s3("debug", pcap)
                 else:
                     # Replay pcap through snort with the user input signature
                     results = snortreplay.s3("lcl",pcap)
@@ -781,10 +783,10 @@ def last7():
     if 'username' not in session:
         return redirect(url_for('notloggedin'))
     else:
-        tix  = []
-        hdrs = ["ID","Created","Status"]
-        res  = jsearch.last7()
-        total = len(res)/3
+        tix             = []
+        hdrs            = ["ID","Created","Status"]
+        res,op,cl,reo   = jsearch.last7()
+        total           = len(res)/3
         for i in range(0,len(res),3):
             x = i
             tix.append(res[x:x+3])
@@ -792,7 +794,7 @@ def last7():
         totaletd = settings.etd.get('fp')+ settings.etd.get('fn')+settings.etd.get('other')
         #print('ETD cases: '+ str(settings.etd.get('fp')), str(settings.etd.get('fn')), str(settings.etd.get('other')))
         settings.etd.update({'total': totaletd})
-        return render_template('./results/last7.html',user=settings.uname,hdrs=hdrs,data=tix,total=total,cog=settings.ques["cog"],
+        return render_template('./results/last7.html',user=settings.uname,hdrs=hdrs,data=tix,total=total,op=op,cl=cl,reo=reo,cog=settings.ques["cog"],
             email=settings.ques["email"],amp=settings.ques["amp"],snort=settings.ques["snort"],web=settings.ques["web"],
             other=settings.ques["other"],totalesc=settings.escalations["total"],ee=settings.escalations["eers"],thr=settings.escalations["thr"],
             resbz=settings.escalations["resbz"],etd=totaletd,fp=settings.etd["fp"],fn=settings.etd["fn"],etdother=settings.etd["other"],
