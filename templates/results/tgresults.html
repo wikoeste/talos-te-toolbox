@@ -83,7 +83,10 @@
                 <tbody>
                 {%for x in r1.sid%}
                 <tr>
-                    <td>{{x}}</td>{%endfor%}
+                    <!--https://panacea.threatgrid.com/mask/submission/361ffc7f8f208a4eeccdbe7c99a35024?region=US-->
+
+                    <td><a href="https://panacea.threatgrid.com/mask/samples/{{x}}?region=US">{{x}}</a></td>
+                    {%endfor%}
                 </tr>
                 </tbody>
             </table>
@@ -144,25 +147,18 @@
                 </tbody>
             </table>
         </div>
-        <br><br>
-<!--<div>
-        <table border="2">
-                <title>File MetaData</title>
-                <thead>
-                    <th>File Name</th>
-                    <th>Hash</th>
-                    <th>Type</th>
-                    <th>Magic</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-</div>-->
-   <br><br>
+
+    <br><br>
+    <!--a href="https://panacea.threatgrid.com/login">Malware Analytics Login</a-->
+    <!--Malware Analytics login TILE-->
+      <div class="tiles tile thover">
+          <a href="https://panacea.threatgrid.com/login" target="_blank">
+          <img alt="s3r" src="../static/imgs/malan.jpeg" height="200" width="280"></a>
+          <div class="caption">Malware Analytics</div>
+      </div>
+
    </body>
+   <br><br>
         <div class="footer">
             <p>Copyright (c) 2022 wikoeste, Cisco Internal Use Only</p>
         </div>
